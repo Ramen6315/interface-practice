@@ -1,20 +1,13 @@
 package com.example.demo;
 
-import com.example.demo.search.WordSearchSorted;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class TestService {
-    private final List<WordSearchSorted> wordSearchSorteds;
-
-    public TestService(List<WordSearchSorted> wordSearchSorteds) {
-        this.wordSearchSorteds = wordSearchSorteds;
-    }
 
     public List<String> notOcp() {
         Names userNames = new Names();
@@ -47,20 +40,6 @@ public class TestService {
 
         return results;
 
-    }
-    public List<String> sortOcp() {
-        Names userNames = new Names();
-        List<String> names = userNames.getNames();
-        List<String> results = new ArrayList<>();
-        for (WordSearchSorted sorted : wordSearchSorteds) {
-            List<String> filteredAndSortedNames = names.stream()
-                .filter(sorted::filterName)
-                .sorted(sorted.sort())
-                .toList();
-
-            results.addAll(filteredAndSortedNames);
-        }
-        return results;
     }
 
 }

@@ -13,29 +13,13 @@ import java.util.stream.Collectors;
 
 @SpringBootTest
 class TestServiceTest {
-    @Autowired
-    List<WordSearchSorted> wordSearchSorteds = List.of(
-        new LeeWordSearchSorted(),
-        new KimWordSearchSorted(),
-        new JangWordSearchSorted(),
-        new BakWordSearchSorted()
-    );
 
-    private final TestService testService = new TestService(wordSearchSorteds);
+    private final TestService testService = new TestService();
 
     @Test
     @DisplayName("")
     public void test() {
         List<String> strings = testService.notOcp();
-        for (String string : strings) {
-            System.out.println(string);
-        }
-    }
-
-    @Test
-    @DisplayName("")
-    public void testOcp() {
-        List<String> strings = testService.sortOcp();
         for (String string : strings) {
             System.out.println(string);
         }
