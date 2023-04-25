@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Comparator;
 
-@Order(1)
+@Order(2)
 @Component
 public class KimWordSearchSorted implements WordSearchSorted {
     @Override
